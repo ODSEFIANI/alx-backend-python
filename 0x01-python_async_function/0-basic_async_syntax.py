@@ -9,5 +9,5 @@ from typing import Union
 async def wait_random(max_delay: int = 10) -> float:
 
     """waits befores ruturning random valuue"""
-    await asyncio.sleep(max_delay)
-    return random.randint(0, max_delay)
+    await asyncio.sleep(random.uniform(0, max_delay))
+    return random.uniform(0, max_delay)
