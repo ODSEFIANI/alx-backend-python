@@ -2,10 +2,10 @@
 """py module"""
 import asyncio
 import random
-from typing import AsyncGenerator
+from typing import Generator
 
 
-async def async_generator() -> AsyncGenerator[int, None]:
+async def async_generator() -> Generator[float, None]:
     '''generates an async output each
     second'''
     for i in range(10):
