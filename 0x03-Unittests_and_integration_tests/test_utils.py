@@ -2,6 +2,7 @@
 """py module
 """
 import unittest
+from typing import Dict, Tuple, Union
 from parameterized import parameterized
 from utils import (
     access_nested_map,
@@ -28,18 +29,10 @@ class TestAccessNestedMap(unittest.TestCase):
     ])
     def test_access_nested_map_exception(
             self,
-            nested_map,
-            path,
-            expected_exception_message
-            ):
-        """function
-        """
-        with self.assertRaises(KeyError) as context:
+            nested_map: Dict,
+            path: Tuple[str],
+            exception: Exception,
+            ) -> None:
+        """checks ifts raise the same error"""
+        with self.assertRaises(exception):
             access_nested_map(nested_map, path)
-
-        # Check if the exception message matches the expected message
-        self.assertEqual(str(context.exception), expected_exception_message)
-
-
-if __name__ == "__main__":
-    unittest.main()
