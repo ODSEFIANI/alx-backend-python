@@ -12,7 +12,8 @@ from utils import (
 
 
 class TestAccessNestedMap(unittest.TestCase):
-
+    """class
+    """
     @parameterized.expand([
         ({"a": 1}, ("a",), 1),
         ({"a": {"b": 2}}, ("a",), {"b": 2}),
